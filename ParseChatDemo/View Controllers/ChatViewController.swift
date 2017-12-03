@@ -21,6 +21,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 75
         
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.getMessages), userInfo: nil, repeats: true)
     }
@@ -34,6 +36,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let chatMessage = PFObject(className: "Message")
         chatMessage["text"] = chatTextField.text ?? ""
+        chatMessage["user"] = PFUser.current()
         
         chatMessage.saveInBackground { (success, error) in
             if(success) {
@@ -53,12 +56,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as! ChatCell
         let message = self.messages[indexPath.row]
         
+        if let user = message["user"] as? PFUser {
+            cell.usernameLabel.text = user.username
+        }
+        else {
+            cell.usernameLabel.text = "🤖"
+        }
+        
         cell.messageLabel.text = message["text"] as? String
         return cell
     }
     
     @objc func getMessages() {
         let query = PFQuery(className: "Message")
+        query.includeKey("user")
         query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
             if error == nil {
