@@ -28,12 +28,14 @@ class LoginViewController: UIViewController {
     @IBAction func onSignUp(_ sender: UIButton) {
         if(validUsernameAndPassword()) {
             registerUser()
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }
     
     @IBAction func onLogin(_ sender: UIButton) {
         if(validUsernameAndPassword()) {
             loginUser()
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }
     

@@ -13,6 +13,7 @@
 		C98DD38F1FD2184700DBF92E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98DD38E1FD2184700DBF92E /* Assets.xcassets */; };
 		C98DD3921FD2184700DBF92E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98DD3901FD2184700DBF92E /* LaunchScreen.storyboard */; };
 		C99FEEA71FD21BD5001AEBA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FEEA61FD21BD5001AEBA6 /* LoginViewController.swift */; };
+		C99FEEA91FD46F7C001AEBA6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FEEA81FD46F7C001AEBA6 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C98DD3911FD2184700DBF92E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C98DD3931FD2184700DBF92E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C99FEEA61FD21BD5001AEBA6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C99FEEA81FD46F7C001AEBA6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				C98DD3871FD2184700DBF92E /* AppDelegate.swift */,
 				C99FEEA61FD21BD5001AEBA6 /* LoginViewController.swift */,
+				C99FEEA81FD46F7C001AEBA6 /* ChatViewController.swift */,
 				C98DD38B1FD2184700DBF92E /* Main.storyboard */,
 				C98DD38E1FD2184700DBF92E /* Assets.xcassets */,
 				C98DD3901FD2184700DBF92E /* LaunchScreen.storyboard */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99FEEA71FD21BD5001AEBA6 /* LoginViewController.swift in Sources */,
+				C99FEEA91FD46F7C001AEBA6 /* ChatViewController.swift in Sources */,
 				C98DD3881FD2184700DBF92E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
